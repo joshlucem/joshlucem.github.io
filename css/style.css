@@ -7,7 +7,7 @@ body{
     width: 100%;
     height: 82vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     background-color: black;
@@ -75,21 +75,6 @@ body{
     font-weight: bold;
     text-align: center;
 }
-.poem{
-    font-size: 1.4rem;
-    text-align: center;
-}
-.att{
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-    color:#ffffffd0;
-}
-.att2{
-    font-size: 1.2rem;
-    text-align: center;
-    color:#ffffffd0;
-}
 .button a{
     text-decoration: none;
     font-size: 4rem;
@@ -99,21 +84,12 @@ body{
 @media screen and (max-width:574px){
     .greetings{
         display: block;
-        font-size: 5rem;
+        font-size: 12rem;
         font-weight: 800;
         text-align: center;
     }
-    .poem{
-        font-size: 1rem;
-    }
-    .att{
-        font-size: 0.9rem;
-    }
-    .att2{
-        font-size: 0.8rem;
-    }
     .description{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .button a{
