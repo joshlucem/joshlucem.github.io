@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>San Valentín 💖</title>
+    <title>San Valentín</title>
     <style>
         body {
             background: linear-gradient(135deg, #ff4d79, #ff1744);
@@ -33,6 +32,7 @@
             font-weight: bold;
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
             animation: latido 1.5s infinite alternate;
+            transform-origin: center;
         }
         p {
             font-size: 1.3rem;
@@ -45,8 +45,8 @@
             gap: 20px;
             margin-top: 15px;
         }
-        .btn {
-            text-decoration: none;
+        button {
+            border: none;
             color: #ff1744;
             background: #ffffff;
             padding: 12px 25px;
@@ -55,18 +55,15 @@
             font-weight: bold;
             box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
             transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+            cursor: pointer;
         }
-        .btn:hover {
+        button:hover {
             transform: scale(1.1);
             background: #ffe0e6;
         }
         @keyframes latido {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.05);
-            }
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
         }
         @keyframes aparecer {
             from {
@@ -89,24 +86,30 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container" id="container">
         <h1>¿Quieres ser mi San Valentín?</h1>
-        <p>Prometo dulces, abrazos y muchas risas (espero)... ¿Aceptas?</p>
+        <p>Aceptar significa recibir dulces, abrazos y toneladas de amor.</p>
         <div class="btn-container">
-            <a href="#" id="btn-si" class="btn">¡Sí!</a>
-            <a href="#" id="btn-random" class="btn">No</a>
+            <button id="btn-si" aria-label="Aceptar">¡Sí!</button>
+            <button id="btn-random" aria-label="Rechazar">No</button>
         </div>
     </div>
+
     <script>
         function moverAleatoriamente(btn) {
-            btn.style.position = "absolute";
-            btn.style.top = Math.floor(Math.random() * 80 + 10) + "%";
-            btn.style.left = Math.floor(Math.random() * 80 + 10) + "%";
+            let maxX = window.innerWidth - btn.offsetWidth;
+            let maxY = window.innerHeight - btn.offsetHeight;
+
+            let newX = Math.floor(Math.random() * maxX);
+            let newY = Math.floor(Math.random() * maxY);
+
+            btn.style.position = "fixed";
+            btn.style.left = `${newX}px`;
+            btn.style.top = `${newY}px`;
         }
 
-        document.querySelector("#btn-random").addEventListener("mouseenter", function (e) {
+        document.querySelector("#btn-random").addEventListener("mouseover", function (e) {
             moverAleatoriamente(e.target);
         });
 
@@ -115,13 +118,10 @@
             let container = document.getElementById("container");
             container.classList.add("desaparecer");
 
-            // Redirige después de la animación
-            setTimeout(() => {
+            container.addEventListener("animationend", () => {
                 window.location.href = "si.html";
-            }, 500);
+            });
         });
     </script>
-    
 </body>
-
 </html>
