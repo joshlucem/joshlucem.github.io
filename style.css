@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: sans-serif;
 }
 
 body {
@@ -12,56 +12,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff4081, #ff1744);
-    color: white;
-    text-align: center;
+    background-color: #ffe5e5;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
-    max-width: 500px;
-}
-
-h1 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
-    animation: latido 1.5s infinite alternate;
-}
-
-/* Animación de latido para resaltar la pregunta */
-@keyframes latido {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.05);
-    }
-}
-
-.btn {
     display: flex;
-    gap: 30px;
-    margin-top: 25px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+}
+
+.container .tenor-gif-embed {
+    display: flex;
+    max-width: 200px;
+}
+
+.container .btn {
+    display: flex;
+    gap: 25px;
 }
 
 .btn a {
     text-decoration: none;
     color: #111;
     background: #fff;
-    padding: 12px 35px;
-    border-radius: 10px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.4);
-    transition: 0.3s;
-}
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0, 0,0.3);
 
-.btn a:hover {
-    background: #ff4081;
-    color: #fff;
-    transform: scale(1.1);
 }

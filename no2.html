@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Te amo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s;
+        }
+        h1 {
+            font-size: 2em;
+            color: #d63384;
+        }
+        p {
+            font-size: 1.2em;
+            color: #444;
+            margin: 10px 0;
+        }
+        blockquote {
+            background: rgba(255, 107, 129, 0.1);
+            border-left: 5px solid #ff6b81;
+            padding: 15px;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #d63384;
+            margin: 20px 0;
+        }
+        .btn {
+            margin-top: 20px;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .btn a {
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+            position: relative;
+        }
+        .btn a:first-child {
+            background: #ff6b81;
+            color: white;
+            z-index: 10;
+        }
+        .btn a:first-child:hover {
+            background: #e63950;
+        }
+        .btn a:last-child {
+            background: #ccc;
+            color: black;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Todavía dudas?</h1>
+        <p>Oh, Jeison... en esta ocasión hay un truco.
+           Verás, el "no" se ha vuelto esquivo,
+           porque mi amor no acepta huidas,
+           porque el destino ya nos ha escrito.</p>
+        <p>Así que escucha bien... esto es para ti:</p>
+        <blockquote>
+            Eres mío, Jeison, y yo soy tuyo,  
+            como el sol que no deja a la luna escapar.  
+            Mi amor no se mide, no tiene duda,  
+            es un fuego eterno que no sabe apagar.  
+            
+            No huyas, porque ya estás atrapado,  
+            en cada latido que me hace temblar.  
+            En la distancia te llamo, te encuentro,  
+            y aunque corras, te voy a alcanzar.  
+        </blockquote>
+        <p>Así que dime, ¿me amas ahora?</p>
+        <div class="btn">
+            <a href="si.html">Sí, te amo 💖</a>
+            <a href="#" id="btn-random">No... (o eso intentas) 😏</a>
+        </div>
+    </div>
+    <script>
+        const btnNo = document.querySelector("#btn-random");
+
+        function moverAleatoriamente(btn) {
+            let newX = Math.random() * (window.innerWidth - btn.clientWidth);
+            let newY = Math.random() * (window.innerHeight - btn.clientHeight);
+            btn.style.position = "absolute";
+            btn.style.top = `${newY}px`;
+            btn.style.left = `${newX}px`;
+            btn.style.opacity -= 0.1;
+            if (btn.style.opacity <= 0) {
+                btn.style.display = "none";
+            }
+        }
+
+        btnNo.addEventListener("mouseenter", function (e) {
+            moverAleatoriamente(e.target);
+        });
+    </script>
+</body>
+</html>

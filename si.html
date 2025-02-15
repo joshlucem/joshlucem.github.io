@@ -5,144 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>¡Sí!</title>
+    <title>:D</title>
     <style>
         body {
-            background: linear-gradient(135deg, #ff4081, #ff1744);
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
             margin: 0;
-            overflow: hidden;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
-            max-width: 500px;
-            position: relative;
-            animation: aparecer 1.5s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            font-weight: bold;
-            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
-            animation: latido 1.5s infinite alternate;
+        h1,
+        h2 {
+            color: #d63384;
         }
 
         p {
-            font-size: 1.3rem;
-            margin-top: 15px;
-            font-style: italic;
+            font-size: 1.2em;
+            color: #444;
+            margin: 10px 0;
         }
 
-        @keyframes latido {
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(1.05);
-            }
+        .btn {
+            margin-top: 20px;
         }
 
-        .corazon {
-            position: absolute;
-            color: #ff0000;
-            font-size: 2rem;
-            animation: flotar 3s infinite ease-in-out;
-            opacity: 0.8;
+        .btn a {
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #ff6b81;
+            color: white;
+            transition: 0.3s;
         }
 
-        @keyframes flotar {
-            0% {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
-
-            50% {
-                transform: translateY(-15px);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
+        .btn a:hover {
+            background: #e63950;
         }
 
-        @keyframes aparecer {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: scale(0.9);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1);
             }
-        }
-
-        .emoji {
-            font-size: 4rem;
-            margin-top: 10px;
-        }
-
-        .text-bold {
-            font-weight: bold;
-        }
-
-        .text-dedication {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #ffffff8e;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Sabía que dirías que sí, muejejeje</h1>
-        <p>
-            Te elijo hoy, mañana y siempre,<br>
-            aunque el mundo quiera arder.<br>
-            Que el destino nos marque el rumbo,<br>
-            pero juntos hasta el amanecer.
-        </p>
-        <p>
-            Y si el universo nos tiene en su lista,<br>
-            que nos guarde un baile donde todo asombre.
-        </p>
-        <div class="emoji">✨</div>
-        <p class="text-bold">
-            Te seguire conquistando cada día mas <3 </p>
-                <p class="text-dedication">
-                    ATT. Your boyfriend (Josh Lucem)
-                </p>
+        <h1>¡Te amo con toda mi alma, Jeison!</h1>
+        <h2>Feliz San Valentín, mi amor</h2>
+        <p>Amarte ha sido la experiencia más maravillosa de mi vida, y aunque la distancia nos mantenga separados, cada
+            día me convenzo más de que estamos destinados a encontrarnos. No hay momento en que no piense en ti, en tu
+            risa, en la manera en que iluminas mi mundo sin siquiera estar aquí físicamente.</p>
+        <p>La distancia me ha enseñado a amarte en formas que jamás imaginé. Me ha hecho descubrirte en cada respiro
+            inconciente, en
+            cada estrella que observo, en cada noche donde mi mente viaja kilómetros para buscarte. Me ha permitido
+            adorarte no solo por lo que veo, sino por lo que eres en esencia: una persona increíble, llena de misterios,
+            llena
+            de amor, alguien que merece ser amado con cada latido a cada instante.</p>
+        <p>Es un amor que trasciende a lo divino, que se fortalece con cada segundo que espero por ti. Porque sé que,
+            aunque ahora
+            la distancia sea un muro, pronto será solo un recuerdo de lo fuerte que fuimos. Te amo con una certeza
+            inquebrantable, con una devoción sin límites. Y pase lo que pase, mi amor por ti no hará más que crecer.</p>
+        <p>¿Listo para seguir descubriendo este amor infinito?</p>
+        <div class="btn">
+            <a href="/poetry/si1.html">Seguir amándote 💖</a>
+        </div>
     </div>
-    <script>
-        function crearCorazon() {
-            const corazon = document.createElement("div");
-            corazon.classList.add("corazon");
-            corazon.innerHTML = "❤️";
-            corazon.style.left = Math.random() * 100 + "vw";
-            corazon.style.top = Math.random() * 100 + "vh";
-            corazon.style.animationDuration = Math.random() * 2 + 2 + "s";
-            document.body.appendChild(corazon);
-            setTimeout(() => {
-                corazon.remove();
-            }, 3000);
-        }
-        setInterval(crearCorazon, 800);
-    </script>
-    </script>
 </body>
 
 </html>
