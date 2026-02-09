@@ -1,1 +1,1 @@
-# joshlucem.github.io
+Click [here](https://joshlucem.github.io/).
