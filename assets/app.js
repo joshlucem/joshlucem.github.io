@@ -136,6 +136,92 @@
     initRevealAnimations();
     initSmoothScroll();
     initCopyrightYear();
+    initTestimonialSlider();
+  }
+
+  // Carrusel de testimonios
+  function initTestimonialSlider() {
+    const wrapper = document.querySelector('.testimonial-wrapper');
+    if (!wrapper) return;
+
+    const track = wrapper.querySelector('.testimonial-track');
+    const cards = Array.from(track.children);
+    const nextButton = wrapper.querySelector('.testimonial-next');
+    const prevButton = wrapper.querySelector('.testimonial-prev');
+    const dotsNav = wrapper.querySelector('.testimonial-dots');
+
+    if (cards.length <= 1) {
+      if (nextButton) nextButton.style.display = 'none';
+      if (prevButton) prevButton.style.display = 'none';
+      if (dotsNav) dotsNav.style.display = 'none';
+      return;
+    }
+
+    let currentIndex = 0;
+
+    // Create dots
+    if (dotsNav) {
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('testimonial-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsNav.appendChild(dot);
+      });
+    }
+    const dots = dotsNav ? Array.from(dotsNav.children) : [];
+
+    const goToSlide = (index) => {
+      // Loop
+      if (index < 0) {
+        index = cards.length - 1;
+      } else if (index >= cards.length) {
+        index = 0;
+      }
+      
+      track.style.transform = 'translateX(-' + 100 * index + '%)';
+      
+      if(dots.length > 0) {
+        if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+        if (dots[index]) dots[index].classList.add('active');
+      }
+
+      currentIndex = index;
+    };
+
+    if(nextButton) {
+        nextButton.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+    }
+
+    if(prevButton) {
+        prevButton.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+    }
+
+    // Swipe functionality
+    let touchStartX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchEndX - touchStartX;
+        const threshold = 50; // min swipe distance in pixels
+
+        if (diff > threshold) {
+            // swipe right
+            goToSlide(currentIndex - 1);
+        } else if (diff < -threshold) {
+            // swipe left
+            goToSlide(currentIndex + 1);
+        }
+    }, { passive: true });
   }
 
   if (document.readyState === 'loading') {
