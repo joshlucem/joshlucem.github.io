@@ -4,14 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Josh Lucem — Plugins de Minecraft, bots de Discord, y algo de poesía.">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content">
+    <meta name="referrer" content="no-referrer">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0d0f12">
+    <meta name="description"
+        content="Portafolio de desarrollo: plugins de Minecraft, bots de Discord e integraciones web.">
+
+    <link rel="canonical" href="https://joshlucem.github.io/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Josh Lucem">
-    <meta property="og:description" content="Código, servidores, madrugadas.">
-    <meta property="og:url" content="https://joshlucem.github.io">
+    <meta property="og:site_name" content="Josh Lucem">
+    <meta property="og:title" content="Josh Lucem | Portafolio">
+    <meta property="og:description"
+        content="Plugins para Paper, bots para Discord y herramientas a medida.">
+    <meta property="og:url" content="https://joshlucem.github.io/">
 
-    <title>Josh Lucem</title>
+    <title>Josh Lucem | Portafolio</title>
 
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="assets/styles.css">
@@ -20,18 +30,18 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <a href="/" class="logo">Josh Lucem</a>
+            <a href="index.html" class="logo">Josh Lucem</a>
 
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
                 <div class="nav-links">
                     <a href="projects.html" class="nav-link">proyectos</a>
                     <a href="poetry.html" class="nav-link">poesía</a>
-                    <a href="#about" class="nav-link">about</a>
+                    <a href="#perfil" class="nav-link">perfil</a>
                     <a href="contact.html" class="nav-link">contacto</a>
                 </div>
 
                 <div class="nav-actions">
-                    <button class="theme-toggle" aria-label="Cambiar tema">
+                    <button class="theme-toggle" type="button" aria-label="Cambiar tema">
                         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
@@ -48,7 +58,8 @@
                         </svg>
                     </button>
 
-                    <a href="https://github.com/joshlucem" class="btn-github" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/joshlucem" class="btn-github" target="_blank"
+                        rel="me noopener noreferrer">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -56,7 +67,7 @@
                         <span>GitHub</span>
                     </a>
 
-                    <button class="mobile-toggle" aria-label="Menú">
+                    <button class="mobile-toggle" type="button" aria-label="Abrir menú">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -69,7 +80,7 @@
     <div class="mobile-menu">
         <a href="projects.html" class="nav-link">proyectos</a>
         <a href="poetry.html" class="nav-link">poesía</a>
-        <a href="#about" class="nav-link">about</a>
+        <a href="#perfil" class="nav-link">perfil</a>
         <a href="contact.html" class="nav-link">contacto</a>
     </div>
 
@@ -77,14 +88,14 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-label reveal">status: disponible</div>
+                    <div class="hero-label reveal">java / js / APIs</div>
                     <h1 class="hero-title reveal reveal-delay-1">
                         <span class="name">Josh</span><br>
-                        código & letras
+                        plugins, bots y sistemas
                     </h1>
                     <p class="hero-subtitle reveal reveal-delay-2">
-                        Plugins de Minecraft. Bots de Discord. Poemas a las 3am.
-                        Estudiante de derecho que prefiere compilar que litigar.
+                        Desarrollo plugins para Paper y Spigot, bots de Discord e integraciones simples para proyectos
+                        concretos.
                     </p>
                     <div class="hero-cta reveal reveal-delay-3">
                         <a href="projects.html" class="btn btn-primary">
@@ -93,9 +104,8 @@
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="https://discord.gg/UzXWvshGfh" class="btn btn-terminal" target="_blank"
-                            rel="noopener noreferrer">
-                            discord
+                        <a href="contact.html" class="btn btn-terminal">
+                            contactar
                         </a>
                     </div>
                     <div class="hero-badges reveal reveal-delay-4">
@@ -107,7 +117,8 @@
                             rel="noopener noreferrer">
                             Modrinth
                         </a>
-                        <a href="https://github.com/joshlucem" class="badge" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/joshlucem" class="badge" target="_blank"
+                            rel="noopener noreferrer">
                             GitHub
                         </a>
                     </div>
@@ -119,7 +130,7 @@
             <div class="container">
                 <header class="section-header">
                     <p class="section-label reveal">servicios</p>
-                    <h2 class="section-title reveal reveal-delay-1">Lo que hago</h2>
+                    <h2 class="section-title reveal reveal-delay-1">Lo que construyo</h2>
                 </header>
 
                 <div class="services-grid">
@@ -136,8 +147,7 @@
                         </div>
                         <h3 class="service-title">plugins</h3>
                         <p class="service-description">
-                            Paper/Spigot. Sistemas de economía, minijuegos, utilidades.
-                            Si tu servidor lo necesita, probablemente puedo hacerlo.
+                            Plugins para Paper y Spigot. Sistemas internos, comandos, utilidades y mecanicas a medida.
                         </p>
                     </div>
 
@@ -150,8 +160,7 @@
                         </div>
                         <h3 class="service-title">bots</h3>
                         <p class="service-description">
-                            Discord.js o JDA. Moderación, juegos, sistemas de tickets.
-                            Automatización para tu comunidad.
+                            Bots en Discord.js o JDA. Moderacion, tickets, integraciones y automatizacion.
                         </p>
                     </div>
 
@@ -165,8 +174,7 @@
                         </div>
                         <h3 class="service-title">escritura</h3>
                         <p class="service-description">
-                            Poesía cuando no puedo dormir. Textos cuando hay algo que decir.
-                            No es mi trabajo, pero existe.
+                            Textos y notas personales. No es un servicio; forma parte del sitio.
                         </p>
                     </div>
 
@@ -180,8 +188,7 @@
                         </div>
                         <h3 class="service-title">consultoría</h3>
                         <p class="service-description">
-                            Si tienes un proyecto y no sabes por dónde empezar,
-                            puedo orientarte. Sin compromiso.
+                            Revision de alcance, arquitectura y decisiones tecnicas antes de empezar.
                         </p>
                     </div>
                 </div>
@@ -200,14 +207,15 @@
                         <div class="testimonial-track">
                             <div class="testimonial-card">
                                 <p class="testimonial-quote">
-                                    Josh y yo hicimos una comunidad en Discord, La Sociedad de Poetas, donde él se encargó de todo el apartado técnico.
-                                    Estos sistemas han implementado bots para subir poemas, puntuaciones, y otras integraciones. Han ayudado mucho en la vida de la comunidad y en sus posibilidades.
-                                    Cualquier persona que tenga el honor de trabajar con Josh, estará en muy atentas manos.
+                                    Josh y yo hicimos una comunidad en Discord, La Sociedad de Poetas, donde él se
+                                    encargó de todo el apartado técnico. Estos sistemas han implementado bots para subir
+                                    poemas, puntuaciones, y otras integraciones. Han ayudado mucho en la vida de la
+                                    comunidad y en sus posibilidades. Cualquier persona que tenga el honor de trabajar
+                                    con Josh, estará en muy atentas manos.
                                 </p>
                                 <div class="testimonial-author">
-                                    <img class="testimonial-avatar"
-                                        src="https://cdn.discordapp.com/avatars/689984223977013272/03dab5a214c1501bc39f0a0321448294.webp"
-                                        alt="Juan">
+                                    <img class="testimonial-avatar" src="img/testimonial-juan.webp" alt="Juan"
+                                        loading="lazy" decoding="async">
                                     <div class="testimonial-info">
                                         <div class="testimonial-name">Juan</div>
                                         <div class="testimonial-role">Señor Amarillo — La Sociedad de Poetas con Brainrot</div>
@@ -217,12 +225,12 @@
 
                             <div class="testimonial-card">
                                 <p class="testimonial-quote">
-                                    Intercambiamos ideas para el desarrollo y crecimiento de un servidor de Minecraft. Me fue de mucha utilidad y, por supuesto, lo recomendaría.
+                                    Intercambiamos ideas para el desarrollo y crecimiento de un servidor de Minecraft.
+                                    Me fue de mucha utilidad y, por supuesto, lo recomendaría.
                                 </p>
                                 <div class="testimonial-author">
-                                    <img class="testimonial-avatar"
-                                        src="https://cdn.discordapp.com/avatars/709847026417926216/63ea3bc4d2097d27ef23eeb3285d1dc7.webp"
-                                        alt="Skoltrax">
+                                    <img class="testimonial-avatar" src="img/testimonial-skoltrax.webp" alt="Skoltrax"
+                                        loading="lazy" decoding="async">
                                     <div class="testimonial-info">
                                         <div class="testimonial-name">Skoltrax</div>
                                         <div class="testimonial-role">Creador de contenido</div>
@@ -233,30 +241,28 @@
                     </div>
 
                     <div class="testimonial-nav">
-                        <button class="testimonial-prev" aria-label="Anterior testimonio">
+                        <button class="testimonial-prev" type="button" aria-label="Anterior testimonio">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M15 18l-6-6 6-6" />
                             </svg>
                         </button>
-                        <button class="testimonial-next" aria-label="Siguiente testimonio">
+                        <button class="testimonial-next" type="button" aria-label="Siguiente testimonio">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M9 18l6-6-6-6" />
                             </svg>
                         </button>
                     </div>
 
-                    <div class="testimonial-dots">
-                        <!-- Dots generados por JS -->
-                    </div>
+                    <div class="testimonial-dots"></div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section about">
+        <section id="perfil" class="section about">
             <div class="container">
                 <header class="section-header">
-                    <p class="section-label reveal">about</p>
-                    <h2 class="section-title reveal reveal-delay-1">Quién soy</h2>
+                    <p class="section-label reveal">perfil</p>
+                    <h2 class="section-title reveal reveal-delay-1">Perfil tecnico</h2>
                 </header>
 
                 <div class="about-content reveal reveal-delay-2">
@@ -265,7 +271,7 @@
                             <span class="terminal-dot red"></span>
                             <span class="terminal-dot yellow"></span>
                             <span class="terminal-dot green"></span>
-                            <span class="terminal-title">josh@lima:~</span>
+                            <span class="terminal-title">dev@local:~</span>
                         </div>
                         <div class="terminal-body">
                             <div class="terminal-line">
@@ -273,8 +279,8 @@
                                 <span class="terminal-command"> whoami</span>
                             </div>
                             <div class="terminal-line terminal-output">
-                                Desarrollador independiente.
-                                Arquitectura para comunidades online.
+                                Desarrollador de software.<br>
+                                Plugins, bots e integraciones.
                             </div>
 
                             <div class="terminal-line">
@@ -282,9 +288,9 @@
                                 <span class="terminal-command"> cat enfoque.txt</span>
                             </div>
                             <div class="terminal-line terminal-output">
-                                Plugins personalizados.<br>
-                                Automatización con bots.<br>
-                                Sistemas a medida para cada proyecto.<br>
+                                Paper y Spigot.<br>
+                                Discord.js y JDA.<br>
+                                Codigo a medida y mantenimiento.<br>
                             </div>
 
                             <div class="terminal-line">
@@ -300,7 +306,7 @@
                                 <span class="terminal-command"> echo $STATUS</span>
                             </div>
                             <div class="terminal-line terminal-output">
-                                disponible para proyectos.
+                                abierto a proyectos puntuales.
                             </div>
 
                             <div class="terminal-line">
@@ -308,10 +314,8 @@
                                 <span class="terminal-cursor"></span>
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
             </div>
         </section>
     </main>
@@ -322,6 +326,7 @@
                 <span class="footer-brand">Josh Lucem</span>
 
                 <div class="footer-links">
+                    <a href="index.html" class="footer-link is-active">inicio</a>
                     <a href="projects.html" class="footer-link">proyectos</a>
                     <a href="poetry.html" class="footer-link">poesía</a>
                     <a href="contact.html" class="footer-link">contacto</a>

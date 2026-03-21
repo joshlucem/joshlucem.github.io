@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Política de privacidad de Josh Lucem.">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0d0f12">
+  <meta name="description" content="Politica de privacidad del sitio y de los servicios publicados aqui.">
+  <link rel="canonical" href="https://joshlucem.github.io/privacy.html">
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Privacidad — Josh Lucem">
+  <meta property="og:site_name" content="Josh Lucem">
+  <meta property="og:title" content="Josh Lucem | Privacidad">
+  <meta property="og:description" content="Resumen de datos tecnicos, almacenamiento local y contacto.">
   <meta property="og:url" content="https://joshlucem.github.io/privacy.html">
   
-  <title>Privacidad — Josh Lucem</title>
+  <title>Josh Lucem | Privacidad</title>
   
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/styles.css">
@@ -18,18 +26,18 @@
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
-      <a href="/" class="logo">Josh Lucem</a>
+      <a href="index.html" class="logo">Josh Lucem</a>
       
-      <nav class="nav">
+      <nav class="nav" aria-label="Navegación principal">
         <div class="nav-links">
           <a href="projects.html" class="nav-link">proyectos</a>
           <a href="poetry.html" class="nav-link">poesía</a>
-          <a href="index.html#about" class="nav-link">about</a>
+          <a href="index.html#perfil" class="nav-link">perfil</a>
           <a href="contact.html" class="nav-link">contacto</a>
         </div>
         
         <div class="nav-actions">
-          <button class="theme-toggle" aria-label="Cambiar tema">
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -46,14 +54,14 @@
             </svg>
           </button>
           
-          <a href="https://github.com/joshlucem" class="btn-github" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/joshlucem" class="btn-github" target="_blank" rel="me noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
             <span>GitHub</span>
           </a>
           
-          <button class="mobile-toggle" aria-label="Menú">
+          <button class="mobile-toggle" type="button" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
@@ -67,14 +75,14 @@
   <div class="mobile-menu">
     <a href="projects.html" class="nav-link">proyectos</a>
     <a href="poetry.html" class="nav-link">poesía</a>
-    <a href="index.html#about" class="nav-link">about</a>
+    <a href="index.html#perfil" class="nav-link">perfil</a>
     <a href="contact.html" class="nav-link">contacto</a>
   </div>
 
   <main class="legal-page">
     <div class="legal-content">
       <h1 class="reveal">Política de Privacidad</h1>
-      <p class="last-updated reveal reveal-delay-1">Última actualización: Enero 2025 | Versión 2.0</p>
+      <p class="last-updated reveal reveal-delay-1">Última actualización: marzo de 2026 | Versión 2.1</p>
       
       <section class="reveal reveal-delay-2">
         <h2>1. Disposiciones Generales</h2>
@@ -85,10 +93,8 @@
           servicios ofrecidos.
         </p>
         <p>
-          Esta Política ha sido redactada en conformidad con los principios de protección de 
-          datos personales reconocidos internacionalmente, incluyendo los establecidos en el 
-          Reglamento General de Protección de Datos (RGPD) de la Unión Europea y la 
-          Ley N° 29733 de Protección de Datos Personales del Perú.
+          Esta Política sigue criterios generales de minimización de datos, seguridad y
+          transparencia aplicables a un sitio estático y a los canales de contacto publicados.
         </p>
       </section>
 
@@ -97,7 +103,6 @@
         <p>El responsable del tratamiento de sus datos personales es:</p>
         <ul>
           <li><strong>Identidad:</strong> Josh Lucem</li>
-          <li><strong>Ubicación:</strong> Lima, Perú (UTC-5)</li>
           <li><strong>Contacto:</strong> A través de los canales establecidos en la <a href="contact.html">sección de contacto</a></li>
         </ul>
       </section>
@@ -114,6 +119,7 @@
           <li>No utilizamos cookies de seguimiento ni tecnologías de rastreo (tracking pixels, web beacons)</li>
           <li>No implementamos servicios de analítica web (Google Analytics, Plausible, etc.)</li>
           <li>No ejecutamos scripts de terceros que recopilen información del usuario</li>
+          <li>No cargamos recursos remotos de terceros de forma automática para renderizar el sitio</li>
           <li>No mantenemos bases de datos de usuarios ni sistemas CRM</li>
         </ul>
         
@@ -169,9 +175,9 @@
         <h2>5. Bases Legales del Tratamiento</h2>
         <p>El procesamiento de datos personales se fundamenta en:</p>
         <ul>
-          <li><strong>Consentimiento (Art. 6.1.a RGPD):</strong> Para comunicaciones voluntarias iniciadas por el usuario</li>
-          <li><strong>Ejecución contractual (Art. 6.1.b RGPD):</strong> Para la prestación de servicios profesionales contratados</li>
-          <li><strong>Interés legítimo (Art. 6.1.f RGPD):</strong> Para la operación técnica del sitio web y respuesta a consultas</li>
+          <li><strong>Consentimiento:</strong> Para comunicaciones iniciadas por el usuario</li>
+          <li><strong>Ejecución de servicios:</strong> Para proyectos o soporte acordados</li>
+          <li><strong>Interés legítimo:</strong> Para la operación técnica del sitio y respuesta a consultas</li>
         </ul>
       </section>
 
@@ -234,7 +240,7 @@
         </p>
         <ul>
           <li>Transmisión cifrada mediante HTTPS/TLS</li>
-          <li>Infraestructura de alojamiento con certificaciones de seguridad (GitHub Enterprise)</li>
+          <li>Infraestructura de alojamiento administrada por GitHub Pages</li>
           <li>Principio de minimización de datos</li>
           <li>Acceso restringido a información confidencial</li>
         </ul>
@@ -288,21 +294,21 @@
         <span class="footer-brand">Josh Lucem</span>
         
         <div class="footer-links">
-          <a href="projects.html" class="footer-link">Proyectos</a>
-          <a href="index.html#servicios" class="footer-link">Servicios</a>
-          <a href="index.html#testimonios" class="footer-link">Testimonios</a>
-          <a href="contact.html" class="footer-link">Contacto</a>
+          <a href="index.html" class="footer-link">inicio</a>
+          <a href="projects.html" class="footer-link">proyectos</a>
+          <a href="poetry.html" class="footer-link">poesía</a>
+          <a href="contact.html" class="footer-link">contacto</a>
         </div>
       </div>
       
       <div class="footer-legal">
-        <a href="privacy.html">Privacidad</a>
-        <a href="terms.html">Términos</a>
-        <a href="use.html">Uso aceptable</a>
+        <a href="privacy.html">privacidad</a>
+        <a href="terms.html">términos</a>
+        <a href="use.html">uso</a>
       </div>
       
       <p class="footer-copyright">
-        &copy; <span class="current-year">2026</span> Josh Lucem. Todos los derechos reservados.
+        &copy; <span class="current-year">2026</span> Josh Lucem
       </p>
     </div>
   </footer>

@@ -8,31 +8,67 @@
 
   // Detecta si el usuario prefiere menos animaciones
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function getStoredTheme() {
+    try {
+      const theme = window.localStorage.getItem('theme');
+      return theme === 'dark' || theme === 'light' ? theme : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setStoredTheme(theme) {
+    try {
+      window.localStorage.setItem('theme', theme);
+    } catch (error) {
+      // Ignora bloqueos de almacenamiento del navegador.
+    }
+  }
+
+  function updateThemeToggle(toggle, theme) {
+    if (!toggle) return;
+
+    const isDark = theme === 'dark';
+    toggle.setAttribute('aria-pressed', String(isDark));
+    toggle.setAttribute('title', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+  }
 
   // Tema claro/oscuro con persistencia en localStorage
   function initTheme() {
     const toggle = document.querySelector('.theme-toggle');
     if (!toggle) return;
 
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = getStoredTheme();
+    const prefersDark = colorSchemeQuery.matches;
     const initial = saved || (prefersDark ? 'dark' : 'light');
     
     document.documentElement.setAttribute('data-theme', initial);
+    updateThemeToggle(toggle, initial);
 
     toggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      setStoredTheme(next);
+      updateThemeToggle(toggle, next);
     });
 
     // Actualiza si cambia la preferencia del sistema
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    const syncWithSystemTheme = (e) => {
+      if (!getStoredTheme()) {
+        const nextTheme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        updateThemeToggle(toggle, nextTheme);
       }
-    });
+    };
+
+    if (typeof colorSchemeQuery.addEventListener === 'function') {
+      colorSchemeQuery.addEventListener('change', syncWithSystemTheme);
+    } else if (typeof colorSchemeQuery.addListener === 'function') {
+      colorSchemeQuery.addListener(syncWithSystemTheme);
+    }
   }
 
   // Cambia el header cuando se hace scroll
@@ -59,16 +95,26 @@
     const menu = document.querySelector('.mobile-menu');
     if (!toggle || !menu) return;
 
+    if (!menu.id) {
+      menu.id = 'site-mobile-menu';
+    }
+
+    toggle.setAttribute('aria-controls', menu.id);
+    toggle.setAttribute('aria-expanded', 'false');
+
     const close = () => {
       toggle.classList.remove('active');
       menu.classList.remove('open');
       document.body.style.overflow = '';
+      toggle.setAttribute('aria-expanded', 'false');
     };
 
     toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.classList.toggle('active');
+      const isOpen = !menu.classList.contains('open');
+      menu.classList.toggle('open', isOpen);
+      toggle.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     // Cierra al hacer click en un link
@@ -80,6 +126,12 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('open')) close();
     });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && menu.classList.contains('open')) {
+        close();
+      }
+    }, { passive: true });
   }
 
   // Animaciones de entrada al hacer scroll (IntersectionObserver)
@@ -110,7 +162,10 @@
         const href = this.getAttribute('href');
         if (href === '#') return;
 
-        const target = document.querySelector(href);
+        const targetId = href.slice(1);
+        if (!targetId) return;
+
+        const target = document.getElementById(decodeURIComponent(targetId));
         if (target) {
           e.preventDefault();
           const headerH = document.querySelector('.header')?.offsetHeight || 0;
