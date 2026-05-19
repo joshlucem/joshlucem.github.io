@@ -77,11 +77,16 @@
     if (!header) return;
 
     let ticking = false;
+    var scrolled = false;
 
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          header.classList.toggle('scrolled', window.scrollY > 50);
+          var shouldScroll = window.scrollY > 50;
+          if (shouldScroll !== scrolled) {
+            scrolled = shouldScroll;
+            header.classList.toggle('scrolled', shouldScroll);
+          }
           ticking = false;
         });
         ticking = true;
@@ -225,6 +230,18 @@
     try { window.localStorage.setItem('lang', lang); }
     catch {}
   }
+  function getCachedLangData() {
+    try {
+      var raw = window.localStorage.getItem('lang_data');
+      return raw ? JSON.parse(raw) : null;
+    } catch { return null; }
+  }
+  function setCachedLangData(data, lang) {
+    try {
+      window.localStorage.setItem('lang_data', JSON.stringify(data));
+      window.localStorage.setItem('lang', lang);
+    } catch {}
+  }
 
   function getCurrentLang() {
     return document.documentElement.getAttribute('data-lang') || 'es';
@@ -243,54 +260,56 @@
     return value;
   }
 
+  function applyLangData(data, lang) {
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      var parts = key.split('.');
+      var value = data;
+      for (var i = 0; i < parts.length; i++) {
+        if (value && value[parts[i]] !== undefined) {
+          value = value[parts[i]];
+        } else {
+          value = undefined;
+          break;
+        }
+      }
+      if (value !== undefined && value !== null) {
+        if (el.getAttribute('data-i18n-attr')) {
+          el.setAttribute(el.getAttribute('data-i18n-attr'), value);
+        } else {
+          el.textContent = value;
+        }
+      }
+    });
+
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es';
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      var active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-checked', String(active));
+    });
+
+    var typingEl = document.querySelector('.hero-typing');
+    if (typingEl) {
+      var cmd = resolveKey(data, 'hero.command');
+      if (cmd) {
+        typingEl.setAttribute('data-text', cmd);
+        if (typingEl.classList.contains('hero-typing-done')) {
+          typingEl.textContent = '';
+          typingEl.textContent = cmd;
+        }
+      }
+    }
+  }
+
   async function setLanguage(lang) {
     try {
       const res = await fetch('lang/' + lang + '.json');
       const data = await res.json();
-
-      document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n');
-        var parts = key.split('.');
-        var value = data;
-        for (var i = 0; i < parts.length; i++) {
-          if (value && value[parts[i]] !== undefined) {
-            value = value[parts[i]];
-          } else {
-            value = undefined;
-            break;
-          }
-        }
-        if (value !== undefined && value !== null) {
-          if (el.getAttribute('data-i18n-attr')) {
-            el.setAttribute(el.getAttribute('data-i18n-attr'), value);
-          } else {
-            el.textContent = value;
-          }
-        }
-      });
-
-      document.documentElement.setAttribute('data-lang', lang);
-      document.documentElement.lang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es';
-
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        var active = btn.getAttribute('data-lang') === lang;
-        btn.classList.toggle('is-active', active);
-        btn.setAttribute('aria-checked', String(active));
-      });
-
-      var typingEl = document.querySelector('.hero-typing');
-      if (typingEl) {
-        var cmd = resolveKey(data, 'hero.command');
-        if (cmd) {
-          typingEl.setAttribute('data-text', cmd);
-          if (typingEl.classList.contains('hero-typing-done')) {
-            typingEl.textContent = '';
-            typingEl.textContent = cmd;
-          }
-        }
-      }
-
-      setStoredLang(lang);
+      setCachedLangData(data, lang);
+      applyLangData(data, lang);
     } catch (e) {
       console.warn('i18n: could not load', lang);
     }
@@ -299,6 +318,10 @@
   function initI18n() {
     var saved = getStoredLang();
     if (saved && saved !== 'es') {
+      var cached = getCachedLangData();
+      if (cached) {
+        applyLangData(cached, saved);
+      }
       setLanguage(saved);
     }
 
