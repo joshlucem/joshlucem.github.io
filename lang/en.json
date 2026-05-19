@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "projects": "projects",
+    "poetry": "poetry",
+    "profile": "profile",
+    "contact": "contact"
+  },
+  "theme": {
+    "toggle": "Change theme",
+    "light": "Switch to light theme",
+    "dark": "Switch to dark theme"
+  },
+  "mobile": {
+    "menu": "Open menu"
+  },
+  "hero": {
+    "label": "java / js / APIs",
+    "command": "./build.sh --services",
+    "title": "plugins, bots and bespoke systems",
+    "subtitle": "I build Paper and Spigot plugins, Discord bots, and whatever odd jobs come my way. No template reselling — every line written from scratch.",
+    "cta_primary": "view projects",
+    "cta_terminal": "get in touch"
+  },
+  "services": {
+    "label": "services",
+    "title": "What I build",
+    "plugins_title": "plugins",
+    "plugins_desc": "Paper and Spigot plugins. Commands, internal systems, weird mechanics — as long as it compiles.",
+    "bots_title": "bots",
+    "bots_desc": "Discord bots with Discord.js or JDA. Tickets, moderation, automation, the usual.",
+    "writing_title": "writing",
+    "writing_desc": "I write when it comes to me. Not a service, just here because I'm human.",
+    "consulting_title": "consulting",
+    "consulting_desc": "I help you define scope, choose tech, and avoid screw-ups before starting a project."
+  },
+  "testimonials": {
+    "label": "references",
+    "title": "Testimonials",
+    "prev": "Previous testimonial",
+    "next": "Next testimonial"
+  },
+  "about": {
+    "label": "profile",
+    "title": "Technical profile",
+    "whoami": "A dev who builds stuff for Minecraft and Discord.",
+    "whoami2": "Nothing fancy, but it works.",
+    "enfoque_1": "Paper, Spigot.",
+    "enfoque_2": "Discord.js, JDA.",
+    "enfoque_3": "Fresh code, maintenance, bug patching.",
+    "stack": "java/ paper-api/ spigot/ javascript/ node/ discord.js/ html-css/",
+    "status": "available for one-off projects."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Stuff I've made. Some public, some private — whatever folks have paid me to build.",
+    "mc_category": "Minecraft Plugins",
+    "mc_desc": "Plugins for Paper and Spigot.",
+    "discord_category": "Discord Bots",
+    "discord_desc": "Bots and automation for private servers.",
+    "timetofly_name": "TimeToFly",
+    "timetofly_desc": "A plugin that grants timed flight based on time or permissions. Nothing complex, but nicely configurable.",
+    "timetofly_f1": "Per-group or per-player control via LuckPerms.",
+    "timetofly_f2": "Configurable duration and activation sounds.",
+    "timetofly_f3": "Custom messages per rank.",
+    "bestsupplies_name": "BestSupplies",
+    "bestsupplies_desc": "Configurable automatic kits and deliveries by event, time or permissions. Open source, in case someone wants to tinker.",
+    "bestsupplies_f1": "Kit system with conditions.",
+    "bestsupplies_f2": "Scheduled events or triggers.",
+    "bestsupplies_f3": "Open source on GitHub.",
+    "airwavechat_name": "AirwaveChat",
+    "airwavechat_desc": "An experiment that ended up working: separate chat channels with custom formatting. So the global channel doesn't get flooded.",
+    "airwavechat_f1": "Public and private channels.",
+    "airwavechat_f2": "Placeholders and configurable formatting.",
+    "airwavechat_f3": "Compatible with other chat plugins.",
+    "discord_bot_name": "Private stack for a Discord community",
+    "discord_bot_desc": "Two private bots handling internal management, activities, points and anonymous submissions.",
+    "bot_events_name": "module-events",
+    "bot_events_desc": "Internal dynamics, events and mini-games to keep the community active.",
+    "bot_events_f1": "Custom mini-games.",
+    "bot_events_f2": "Scheduled events.",
+    "bot_events_f3": "Points system and leaderboard.",
+    "bot_submissions_name": "module-submissions",
+    "bot_submissions_desc": "Anonymous content submission with review queue and auto-publishing.",
+    "bot_submissions_f1": "Anonymous submissions with approval.",
+    "bot_submissions_f2": "TikTok Live queue.",
+    "bot_submissions_f3": "Filters and auto-moderation.",
+    "cta_title": "Something similar?",
+    "cta_desc": "DM me on Discord and we'll see what we can do.",
+    "cta_btn": "Contact"
+  },
+  "status": {
+    "active": "active",
+    "open_source": "open source",
+    "private": "private",
+    "archived": "archived"
+  },
+  "tech": {
+    "java": "Java",
+    "paper_api": "Paper API",
+    "spigot_api": "Spigot API",
+    "node": "Node.js",
+    "discordjs": "Discord.js"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "GitHub Pages, no backend. No forms or personal data published here.",
+    "line1": "echo \"GitHub Pages = static\"",
+    "line1_out": "I don't use forms here.",
+    "line2": "cat contact.txt",
+    "line2_out": "Contact via Discord.",
+    "line3": "cat note.txt",
+    "line3_out": "I don't publish email, location or hours on the site.",
+    "discord_title": "Support server",
+    "discord_desc": "For support, proposals or technical questions.",
+    "discord_btn": "Join",
+    "card_what_title": "What I do",
+    "card_what_1": "Plugins for Paper and Spigot.",
+    "card_what_2": "Discord bots with tickets, mini-games or automation.",
+    "card_what_3": "Maintenance, integrations and code reviews.",
+    "card_tips_title": "Tips for reaching out",
+    "card_tips_1": "Tell me what you need, which platform and when.",
+    "card_tips_2": "If there's existing code, share the repo or context.",
+    "card_tips_3": "If it's support: version, error, how to reproduce.",
+    "card_tips_note": "If it's a private project, better come with clear requirements."
+  },
+  "poetry": {
+    "title": "Poetry",
+    "description": "Writing on the side. Nothing to sell here.",
+    "index_title": "Index"
+  },
+  "legal": {
+    "title": "Legal",
+    "description": "Legal stuff in one page. No fluff.",
+    "privacy_heading": "Privacy",
+    "privacy_p1": "This site is fully static (GitHub Pages, no backend). No cookies, no tracking, no analytics, no forms that send data. The only data stored in your browser is theme preference (light/dark) via localStorage, and it is not transmitted anywhere.",
+    "privacy_p2": "GitHub's servers may log IP addresses and HTTP headers per their own privacy policy. If you contact me via Discord, any data you share is subject to Discord's privacy policy.",
+    "license_heading": "Software licenses",
+    "license_p1": "Software I publish as open source (plugins, bots, libraries) is under the MIT license unless the repository states otherwise. You may use, modify and distribute it freely, as long as you keep the copyright notice and original license.",
+    "license_p2": "Private or custom-developed software for clients is governed by the terms agreed in each contract. Redistribution without express permission is not allowed.",
+    "terms_heading": "Terms of service",
+    "terms_scope": "Scope: Defined in a written proposal before starting. Subsequent changes may adjust pricing and deadlines.",
+    "terms_payment": "Payment: Agreed per project. Typically 50% upfront and 50% on delivery, unless otherwise agreed.",
+    "terms_ip": "Intellectual property: The code belongs to you once paid. I reserve the right to reuse generic patterns or components.",
+    "terms_warranty": "Warranty: 30 days for bugs reported after delivery. Does not cover your modifications or third-party issues.",
+    "terms_support": "Support: The level of support is defined per agreement. For free or open source projects, it is best-effort with no guaranteed response time.",
+    "disclaimer_heading": "Disclaimer",
+    "disclaimer_text": "All free and open source software is provided \"as is\", without warranty of any kind. I am not liable for damages, data loss or any other issues arising from its use."
+  },
+  "error": {
+    "title": "404",
+    "message": "That's not around here.",
+    "terminal_out": "HTTP/2 404 Not Found",
+    "terminal_ls": "home/  projects/  contact/"
+  },
+  "footer": {
+    "home": "home",
+    "projects": "projects",
+    "poetry": "poetry",
+    "contact": "contact",
+    "legal": "legal",
+    "github_label": "GitHub",
+    "discord_label": "Discord"
+  },
+  "scroll_top": "Back to top"
+}

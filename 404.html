@@ -23,7 +23,12 @@
           <a href="contact.html" class="nav-link">contacto</a>
         </div>
         <div class="nav-actions">
-          <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+          <div class="lang-switcher" role="radiogroup" aria-label="Idioma / Language">
+            <button class="lang-btn is-active" data-lang="es" role="radio" aria-checked="true" aria-label="Español">ES</button>
+            <button class="lang-btn" data-lang="en" role="radio" aria-checked="false" aria-label="English">EN</button>
+            <button class="lang-btn" data-lang="pt" role="radio" aria-checked="false" aria-label="Português">PT</button>
+          </div>
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-i18n="theme.toggle" data-i18n-attr="aria-label">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -39,7 +44,7 @@
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
           </button>
-          <button class="mobile-toggle" type="button" aria-label="Abrir menú">
+          <button class="mobile-toggle" type="button" aria-label="Abrir menú" data-i18n="mobile.menu" data-i18n-attr="aria-label">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -56,8 +61,8 @@
 
   <main class="legal-page">
     <div class="legal-content" style="text-align:center">
-      <h1 class="reveal">404</h1>
-      <p class="reveal reveal-delay-1" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:2rem">
+      <h1 class="reveal" data-i18n="error.title">404</h1>
+      <p class="reveal reveal-delay-1" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:2rem" data-i18n="error.message">
         Eso no está por aquí.
       </p>
       <div class="terminal" style="max-width:400px;margin:0 auto">
@@ -69,9 +74,9 @@
         </div>
         <div class="terminal-body">
           <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-command"> curl -I pagina</span></div>
-          <div class="terminal-line terminal-output">HTTP/2 404 Not Found</div>
+          <div class="terminal-line terminal-output" data-i18n="error.terminal_out">HTTP/2 404 Not Found</div>
           <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-command"> ls ../</span></div>
-          <div class="terminal-line terminal-output"><a href="index.html" style="color:var(--accent)">inicio/</a>  <a href="projects.html" style="color:var(--accent)">proyectos/</a>  <a href="contact.html" style="color:var(--accent)">contacto/</a></div>
+          <div class="terminal-line terminal-output" data-i18n="error.terminal_ls"><a href="index.html" style="color:var(--accent)">inicio/</a>  <a href="projects.html" style="color:var(--accent)">proyectos/</a>  <a href="contact.html" style="color:var(--accent)">contacto/</a></div>
           <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></div>
         </div>
       </div>
@@ -83,10 +88,10 @@
       <div class="footer-content">
         <span class="footer-brand">Josh Lucem</span>
         <div class="footer-links">
-          <a href="index.html" class="footer-link">inicio</a>
-          <a href="projects.html" class="footer-link">proyectos</a>
-          <a href="poetry.html" class="footer-link">poesía</a>
-          <a href="contact.html" class="footer-link">contacto</a>
+          <a href="index.html" class="footer-link" data-i18n="footer.home">inicio</a>
+          <a href="projects.html" class="footer-link" data-i18n="footer.projects">proyectos</a>
+          <a href="poetry.html" class="footer-link" data-i18n="footer.poetry">poesía</a>
+          <a href="contact.html" class="footer-link" data-i18n="footer.contact">contacto</a>
         </div>
       </div>
 
@@ -109,7 +114,7 @@
     </div>
   </footer>
 
-  <button class="scroll-top" type="button" aria-label="Volver arriba">
+  <button class="scroll-top" type="button" aria-label="Volver arriba" data-i18n="scroll_top" data-i18n-attr="aria-label">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
       <path d="M18 15l-6-6-6 6" />
     </svg>

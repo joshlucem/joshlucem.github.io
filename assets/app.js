@@ -215,6 +215,78 @@
     observer.observe(typingEl.closest('.hero-command'));
   }
 
+  // Sistema de idiomas
+  function getStoredLang() {
+    try { return window.localStorage.getItem('lang') || 'es'; }
+    catch { return 'es'; }
+  }
+
+  function setStoredLang(lang) {
+    try { window.localStorage.setItem('lang', lang); }
+    catch {}
+  }
+
+  function getCurrentLang() {
+    return document.documentElement.getAttribute('data-lang') || 'es';
+  }
+
+  async function setLanguage(lang) {
+    try {
+      const res = await fetch('lang/' + lang + '.json');
+      const data = await res.json();
+
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var parts = key.split('.');
+        var value = data;
+        for (var i = 0; i < parts.length; i++) {
+          if (value && value[parts[i]] !== undefined) {
+            value = value[parts[i]];
+          } else {
+            value = undefined;
+            break;
+          }
+        }
+        if (value !== undefined && value !== null) {
+          if (el.getAttribute('data-i18n-attr')) {
+            el.setAttribute(el.getAttribute('data-i18n-attr'), value);
+          } else {
+            el.textContent = value;
+          }
+        }
+      });
+
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es';
+
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        var active = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-checked', String(active));
+      });
+
+      setStoredLang(lang);
+    } catch (e) {
+      console.warn('i18n: could not load', lang);
+    }
+  }
+
+  function initI18n() {
+    var saved = getStoredLang();
+    if (saved && saved !== 'es') {
+      setLanguage(saved);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var lang = this.getAttribute('data-lang');
+        if (lang !== getCurrentLang()) {
+          setLanguage(lang);
+        }
+      });
+    });
+  }
+
   // Boton volver arriba
   function initScrollTop() {
     const btn = document.querySelector('.scroll-top');
@@ -238,6 +310,7 @@
     initSmoothScroll();
     initCopyrightYear();
     initTestimonialSlider();
+    initI18n();
     initTypingEffect();
     initScrollTop();
   }

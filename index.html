@@ -66,7 +66,12 @@
                 </div>
 
                 <div class="nav-actions">
-                    <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+                    <div class="lang-switcher" role="radiogroup" aria-label="Idioma / Language">
+                        <button class="lang-btn is-active" data-lang="es" role="radio" aria-checked="true" aria-label="Español">ES</button>
+                        <button class="lang-btn" data-lang="en" role="radio" aria-checked="false" aria-label="English">EN</button>
+                        <button class="lang-btn" data-lang="pt" role="radio" aria-checked="false" aria-label="Português">PT</button>
+                    </div>
+                    <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-i18n="theme.toggle" data-i18n-attr="aria-label">
                         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
@@ -92,7 +97,7 @@
                         <span>GitHub</span>
                     </a>
 
-                    <button class="mobile-toggle" type="button" aria-label="Abrir menú">
+                    <button class="mobile-toggle" type="button" aria-label="Abrir menú" data-i18n="mobile.menu" data-i18n-attr="aria-label">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -113,7 +118,7 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-label reveal">java / js / APIs</div>
+                    <div class="hero-label reveal" data-i18n="hero.label">java / js / APIs</div>
 
                     <div class="hero-command reveal">
                         <div class="terminal-line">
@@ -125,20 +130,20 @@
 
                     <h1 class="hero-title reveal reveal-delay-1">
                         <span class="name">Josh</span><br>
-                        plugins, bots y sistemas a medida
+                        <span data-i18n="hero.title">plugins, bots y sistemas a medida</span>
                     </h1>
-                    <p class="hero-subtitle reveal reveal-delay-2">
+                    <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero.subtitle">
                         Hago plugins para Paper y Spigot, bots de Discord y cosillas sueltas que encarguen.
                         Nada de revender plantillas — todo código escrito desde cero.
                     </p>
                     <div class="hero-cta reveal reveal-delay-3">
                         <a href="projects.html" class="btn btn-primary">
-                            ver proyectos
+                            <span data-i18n="hero.cta_primary">ver proyectos</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <a href="contact.html" class="btn btn-terminal">
+                        <a href="contact.html" class="btn btn-terminal" data-i18n="hero.cta_terminal">
                             contactar
                         </a>
                     </div>
@@ -163,8 +168,8 @@
         <section id="servicios" class="section services">
             <div class="container">
                 <header class="section-header">
-                    <p class="section-label reveal">servicios</p>
-                    <h2 class="section-title reveal reveal-delay-1">Lo que construyo</h2>
+                    <p class="section-label reveal" data-i18n="services.label">servicios</p>
+                    <h2 class="section-title reveal reveal-delay-1" data-i18n="services.title">Lo que construyo</h2>
                 </header>
 
                 <div class="services-grid">
@@ -179,8 +184,8 @@
                                 <line x1="15" y1="20" x2="15" y2="23"></line>
                             </svg>
                         </div>
-                        <h3 class="service-title">plugins</h3>
-                        <p class="service-description">
+                        <h3 class="service-title" data-i18n="services.plugins_title">plugins</h3>
+                        <p class="service-description" data-i18n="services.plugins_desc">
                             Plugins para Paper y Spigot. Comandos, sistemas internos, mecanicas raras — lo que sea mientras compile.
                         </p>
                     </div>
@@ -192,8 +197,8 @@
                                     d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
                             </svg>
                         </div>
-                        <h3 class="service-title">bots</h3>
-                        <p class="service-description">
+                        <h3 class="service-title" data-i18n="services.bots_title">bots</h3>
+                        <p class="service-description" data-i18n="services.bots_desc">
                             Bots pa Discord con Discord.js o JDA. Tickets, mods, automatizar weas, lo típico.
                         </p>
                     </div>
@@ -206,8 +211,8 @@
                                 <circle cx="11" cy="11" r="2"></circle>
                             </svg>
                         </div>
-                        <h3 class="service-title">escritura</h3>
-                        <p class="service-description">
+                        <h3 class="service-title" data-i18n="services.writing_title">escritura</h3>
+                        <p class="service-description" data-i18n="services.writing_desc">
                             Escribo cosas cuando me sale. No es un servicio, solo está acá porque soy humano.
                         </p>
                     </div>
@@ -220,8 +225,8 @@
                                 <polyline points="2 12 12 17 22 12"></polyline>
                             </svg>
                         </div>
-                        <h3 class="service-title">consultoría</h3>
-                        <p class="service-description">
+                        <h3 class="service-title" data-i18n="services.consulting_title">consultoría</h3>
+                        <p class="service-description" data-i18n="services.consulting_desc">
                             Te ayudo a definir alcance, elegir tecnologias y evitar cagadas antes de empezar un proyecto.
                         </p>
                     </div>
@@ -232,8 +237,8 @@
         <section id="testimonios" class="section testimonials">
             <div class="container">
                 <header class="section-header">
-                    <p class="section-label reveal">referencias</p>
-                    <h2 class="section-title reveal reveal-delay-1">Testimonios</h2>
+                    <p class="section-label reveal" data-i18n="testimonials.label">referencias</p>
+                    <h2 class="section-title reveal reveal-delay-1" data-i18n="testimonials.title">Testimonios</h2>
                 </header>
 
                 <div class="testimonial-wrapper">
@@ -275,12 +280,12 @@
                     </div>
 
                     <div class="testimonial-nav">
-                        <button class="testimonial-prev" type="button" aria-label="Anterior testimonio">
+                        <button class="testimonial-prev" type="button" aria-label="Anterior testimonio" data-i18n="testimonials.prev" data-i18n-attr="aria-label">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M15 18l-6-6 6-6" />
                             </svg>
                         </button>
-                        <button class="testimonial-next" type="button" aria-label="Siguiente testimonio">
+                        <button class="testimonial-next" type="button" aria-label="Siguiente testimonio" data-i18n="testimonials.next" data-i18n-attr="aria-label">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M9 18l6-6-6-6" />
                             </svg>
@@ -295,8 +300,8 @@
         <section id="perfil" class="section about">
             <div class="container">
                 <header class="section-header">
-                    <p class="section-label reveal">perfil</p>
-                    <h2 class="section-title reveal reveal-delay-1">Perfil tecnico</h2>
+                    <p class="section-label reveal" data-i18n="about.label">perfil</p>
+                    <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title">Perfil tecnico</h2>
                 </header>
 
                 <div class="about-content reveal reveal-delay-2">
@@ -313,8 +318,8 @@
                                 <span class="terminal-command"> whoami</span>
                             </div>
                             <div class="terminal-line terminal-output">
-                                Un dev que hace cosas para Minecraft y Discord.<br>
-                                Nada del otro mundo, pero funcionan.
+                                <span data-i18n="about.whoami">Un dev que hace cosas para Minecraft y Discord.</span><br>
+                                <span data-i18n="about.whoami2">Nada del otro mundo, pero funcionan.</span>
                             </div>
 
                             <div class="terminal-line">
@@ -322,16 +327,16 @@
                                 <span class="terminal-command"> cat enfoque.txt</span>
                             </div>
                             <div class="terminal-line terminal-output">
-                                Paper, Spigot.<br>
-                                Discord.js, JDA.<br>
-                                Codigo fresco, mantenimiento, parchar bugs.<br>
+                                <span data-i18n="about.enfoque_1">Paper, Spigot.</span><br>
+                                <span data-i18n="about.enfoque_2">Discord.js, JDA.</span><br>
+                                <span data-i18n="about.enfoque_3">Codigo fresco, mantenimiento, parchar bugs.</span><br>
                             </div>
 
                             <div class="terminal-line">
                                 <span class="terminal-prompt">$</span>
                                 <span class="terminal-command"> ls stack/</span>
                             </div>
-                            <div class="terminal-line terminal-output">
+                            <div class="terminal-line terminal-output" data-i18n="about.stack">
                                 java/ paper-api/ spigot/ javascript/ node/ discord.js/ html-css/
                             </div>
 
@@ -339,7 +344,7 @@
                                 <span class="terminal-prompt">$</span>
                                 <span class="terminal-command"> echo $STATUS</span>
                             </div>
-                            <div class="terminal-line terminal-output">
+                            <div class="terminal-line terminal-output" data-i18n="about.status">
                                 disponible para proyectos puntuales.
                             </div>
 
@@ -360,10 +365,10 @@
                 <span class="footer-brand">Josh Lucem</span>
 
                 <div class="footer-links">
-                    <a href="index.html" class="footer-link is-active">inicio</a>
-                    <a href="projects.html" class="footer-link">proyectos</a>
-                    <a href="poetry.html" class="footer-link">poesía</a>
-                    <a href="contact.html" class="footer-link">contacto</a>
+                    <a href="index.html" class="footer-link is-active" data-i18n="footer.home">inicio</a>
+                    <a href="projects.html" class="footer-link" data-i18n="footer.projects">proyectos</a>
+                    <a href="poetry.html" class="footer-link" data-i18n="footer.poetry">poesía</a>
+                    <a href="contact.html" class="footer-link" data-i18n="footer.contact">contacto</a>
                 </div>
             </div>
 
@@ -383,7 +388,7 @@
             </div>
 
             <div class="footer-legal">
-                <a href="legal.html">legal</a>
+                <a href="legal.html" data-i18n="footer.legal">legal</a>
             </div>
 
             <p class="footer-copyright">
@@ -392,7 +397,7 @@
         </div>
     </footer>
 
-    <button class="scroll-top" type="button" aria-label="Volver arriba">
+    <button class="scroll-top" type="button" aria-label="Volver arriba" data-i18n="scroll_top" data-i18n-attr="aria-label">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M18 15l-6-6-6 6" />
         </svg>

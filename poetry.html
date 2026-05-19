@@ -64,7 +64,12 @@
         </div>
 
         <div class="nav-actions">
-          <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+          <div class="lang-switcher" role="radiogroup" aria-label="Idioma / Language">
+            <button class="lang-btn is-active" data-lang="es" role="radio" aria-checked="true" aria-label="Español">ES</button>
+            <button class="lang-btn" data-lang="en" role="radio" aria-checked="false" aria-label="English">EN</button>
+            <button class="lang-btn" data-lang="pt" role="radio" aria-checked="false" aria-label="Português">PT</button>
+          </div>
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema" data-i18n="theme.toggle" data-i18n-attr="aria-label">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -89,7 +94,7 @@
             <span>GitHub</span>
           </a>
 
-          <button class="mobile-toggle" type="button" aria-label="Abrir menú">
+          <button class="mobile-toggle" type="button" aria-label="Abrir menú" data-i18n="mobile.menu" data-i18n-attr="aria-label">
             <span></span>
             <span></span>
             <span></span>
@@ -110,8 +115,8 @@
     <section class="poetry-hero">
       <div class="container">
         <div class="poetry-hero-content">
-          <h1 class="reveal">Poesía</h1>
-          <p class="reveal reveal-delay-1">
+          <h1 class="reveal" data-i18n="poetry.title">Poesía</h1>
+          <p class="reveal reveal-delay-1" data-i18n="poetry.description">
             Textos aparte. Nada que vender aca.
           </p>
         </div>
@@ -278,7 +283,7 @@ Te amo, más allá del siempre.
           </div>
 
           <aside class="poetry-index reveal">
-            <h4 class="poetry-index-title">Índice</h4>
+            <h4 class="poetry-index-title" data-i18n="poetry.index_title">Índice</h4>
             <ol class="poetry-index-list">
               <li class="poetry-index-item">
                 <a href="#poem-1">No title <span class="poetry-index-date">08/02</span></a>
@@ -305,10 +310,10 @@ Te amo, más allá del siempre.
         <span class="footer-brand">Josh Lucem</span>
 
         <div class="footer-links">
-          <a href="index.html" class="footer-link">inicio</a>
-          <a href="projects.html" class="footer-link">proyectos</a>
-          <a href="poetry.html" class="footer-link is-active">poesía</a>
-          <a href="contact.html" class="footer-link">contacto</a>
+          <a href="index.html" class="footer-link" data-i18n="footer.home">inicio</a>
+          <a href="projects.html" class="footer-link" data-i18n="footer.projects">proyectos</a>
+          <a href="poetry.html" class="footer-link is-active" data-i18n="footer.poetry">poesía</a>
+          <a href="contact.html" class="footer-link" data-i18n="footer.contact">contacto</a>
         </div>
       </div>
 
@@ -328,7 +333,7 @@ Te amo, más allá del siempre.
       </div>
 
       <div class="footer-legal">
-        <a href="legal.html">legal</a>
+        <a href="legal.html" data-i18n="footer.legal">legal</a>
       </div>
 
       <p class="footer-copyright">
@@ -337,7 +342,7 @@ Te amo, más allá del siempre.
     </div>
   </footer>
 
-  <button class="scroll-top" type="button" aria-label="Volver arriba">
+  <button class="scroll-top" type="button" aria-label="Volver arriba" data-i18n="scroll_top" data-i18n-attr="aria-label">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
       <path d="M18 15l-6-6-6 6" />
     </svg>
