@@ -1887,6 +1887,78 @@ button:focus-visible {
   .section { padding: 60px 0; }
   .hero { padding: calc(var(--header-h) + 20px) 0 60px; }
   .hero-title { font-size: 32px; }
-  .projects-cta { padding: 40px 24px; }
-  .terminal-body { padding: 16px; font-size: 12px; }
+  .hero-subtitle { font-size: 14px; }
+  .hero-command { font-size: 12px; }
+  .hero-cta { gap: 12px; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero-badges { gap: 8px; }
+  .badge { padding: 8px 12px; font-size: 11px; }
+  .service-card { padding: 24px; }
+  .project-card-inner { padding: 24px; }
+  .testimonial-card { padding: 24px; }
+  .testimonial-quote { padding: 0 20px; font-size: 13px; }
+  .contact-discord { padding: 28px 20px; }
+  .contact-card { padding: 24px; }
+  .poem-card { padding: 24px; }
+  .projects-cta { padding: 32px 20px; }
+  .projects-cta h3 { font-size: 20px; }
+  .footer { padding: 40px 0 32px; }
+  .footer-legal { gap: 16px; flex-wrap: wrap; }
+  .section-header { margin-bottom: 40px; }
+  .section-title { font-size: 28px; }
+  .nav-actions { gap: 8px; }
+  .lang-btn { padding: 6px 4px; min-width: 28px; font-size: 10px; }
+  .scroll-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+  .legal-page { padding: calc(var(--header-h) + 40px) 16px 60px; }
+  .container { padding: 0 16px; }
+  .header-inner { padding: 0 16px; }
+  .mobile-menu { padding: 16px; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 26px; letter-spacing: -1px; }
+  .hero-command { font-size: 11px; }
+  .hero-command .terminal-line { gap: 2px; }
+  .hero-label { font-size: 10px; }
+  .hero-cta { flex-direction: column; gap: 10px; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero-badges { flex-direction: column; gap: 6px; }
+  .badge { width: 100%; justify-content: center; }
+  .service-card { padding: 20px; }
+  .project-card-inner { padding: 20px; }
+  .poem-card { padding: 20px; }
+  .testimonial-card { padding: 20px; }
+  .testimonial-quote { padding: 0 12px; font-size: 12px; }
+  .contact-discord { padding: 24px 16px; }
+  .contact-card { padding: 20px; }
+  .projects-cta { padding: 24px 16px; }
+  .projects-cta h3 { font-size: 18px; }
+  .section-header { margin-bottom: 32px; }
+  .section-title { font-size: 24px; }
+  .section-subtitle { font-size: 13px; }
+  .footer { padding: 32px 0 24px; }
+  .footer-legal { gap: 12px; }
+  .mobile-menu { padding: 12px; }
+  .mobile-menu .nav-link { font-size: 14px; padding: 10px 0; }
+  .scroll-top { bottom: 12px; right: 12px; width: 34px; height: 34px; }
+  .scroll-top svg { width: 16px; height: 16px; }
+  .legal-page { padding: calc(var(--header-h) + 32px) 12px 48px; }
+  .legal-content h1 { font-size: 24px; }
+  .hero-typing { white-space: normal; word-break: break-word; }
+  .container { padding: 0 12px; }
+  .header-inner { padding: 0 12px; }
+  .logo { font-size: 16px; }
+  .theme-toggle { width: 36px; height: 36px; }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .lang-btn { padding: 5px 3px; min-width: 24px; font-size: 9px; }
+  .nav-actions { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-title .name::before,
+  .hero-title .name::after { display: none; }
+  .hero-command .terminal-cursor { display: none; }
 }
