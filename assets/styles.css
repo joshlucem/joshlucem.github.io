@@ -265,6 +265,7 @@ button:focus-visible {
   letter-spacing: -0.5px;
   color: var(--text);
   position: relative;
+  white-space: nowrap;
 }
 .logo::before {
   content: '> ';
