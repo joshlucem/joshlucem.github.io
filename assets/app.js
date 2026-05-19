@@ -326,6 +326,13 @@
     });
   }
 
+  // Service Worker
+  function initSW() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  }
+
   // Inicializa todo cuando el DOM está listo
   function init() {
     initTheme();
@@ -338,6 +345,7 @@
     initI18n();
     initTypingEffect();
     initScrollTop();
+    initSW();
   }
 
   // Carrusel de testimonios
@@ -366,7 +374,7 @@
         const dot = document.createElement('button');
         dot.classList.add('testimonial-dot');
         if (i === 0) dot.classList.add('active');
-        dot.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+        dot.setAttribute('aria-label', 'Testimonial ' + (i + 1));
         dot.addEventListener('click', () => goToSlide(i));
         dotsNav.appendChild(dot);
       });

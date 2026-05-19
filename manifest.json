@@ -1,0 +1,26 @@
+{
+  "name": "Josh Lucem",
+  "short_name": "Josh Lucem",
+  "description": "Plugins para Paper, bots para Discord y herramientas a medida.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0d0f12",
+  "theme_color": "#dc2626",
+  "categories": ["developer", "portfolio"],
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
