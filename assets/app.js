@@ -32,7 +32,7 @@
 
     const isDark = theme === 'dark';
     toggle.setAttribute('aria-pressed', String(isDark));
-    toggle.setAttribute('title', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    toggle.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
   // Tema claro/oscuro con persistencia en localStorage
@@ -230,6 +230,19 @@
     return document.documentElement.getAttribute('data-lang') || 'es';
   }
 
+  function resolveKey(obj, key) {
+    var parts = key.split('.');
+    var value = obj;
+    for (var i = 0; i < parts.length; i++) {
+      if (value && value[parts[i]] !== undefined) {
+        value = value[parts[i]];
+      } else {
+        return null;
+      }
+    }
+    return value;
+  }
+
   async function setLanguage(lang) {
     try {
       const res = await fetch('lang/' + lang + '.json');
@@ -264,6 +277,18 @@
         btn.classList.toggle('is-active', active);
         btn.setAttribute('aria-checked', String(active));
       });
+
+      var typingEl = document.querySelector('.hero-typing');
+      if (typingEl) {
+        var cmd = resolveKey(data, 'hero.command');
+        if (cmd) {
+          typingEl.setAttribute('data-text', cmd);
+          if (typingEl.classList.contains('hero-typing-done')) {
+            typingEl.textContent = '';
+            typingEl.textContent = cmd;
+          }
+        }
+      }
 
       setStoredLang(lang);
     } catch (e) {
@@ -385,16 +410,18 @@
         touchStartX = e.touches[0].clientX;
     }, { passive: true });
 
+    track.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
     track.addEventListener('touchend', (e) => {
         const touchEndX = e.changedTouches[0].clientX;
         const diff = touchEndX - touchStartX;
-        const threshold = 50; // min swipe distance in pixels
+        const threshold = 50;
 
         if (diff > threshold) {
-            // swipe right
             goToSlide(currentIndex - 1);
         } else if (diff < -threshold) {
-            // swipe left
             goToSlide(currentIndex + 1);
         }
     }, { passive: true });

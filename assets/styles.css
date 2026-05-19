@@ -544,7 +544,7 @@ button:focus-visible {
   margin-left: 2px;
 }
 .hero-typing {
-  color: var(--silver-200);
+  color: var(--text);
   white-space: pre;
 }
 .hero-typing-done {
@@ -1626,15 +1626,6 @@ button:focus-visible {
   color: var(--text-muted);
 }
 
-/* Deprecated grid - keeping for backwards compatibility */
-.poetry-grid {
-  display: grid;
-  gap: 32px;
-}
-@media (min-width: 768px) {
-  .poetry-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 .poem-card {
   padding: 32px;
   background: var(--glass-bg);
@@ -1882,6 +1873,11 @@ button:focus-visible {
 .text-accent { color: var(--accent); }
 .text-muted { color: var(--text-muted); }
 .font-mono { font-family: var(--font-mono); }
+.legal-content-center { text-align: center; }
+.terminal-narrow { max-width: 400px; margin: 0 auto; }
+.error-message { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; }
+.terminal-link { color: var(--accent); }
+.terminal-link:hover { text-decoration: underline; }
 
 /* Responsive */
 @media (max-width: 640px) {
@@ -1948,10 +1944,11 @@ button:focus-visible {
   .container { padding: 0 12px; }
   .header-inner { padding: 0 12px; }
   .logo { font-size: 16px; }
-  .theme-toggle { width: 36px; height: 36px; }
+  .theme-toggle { width: 40px; height: 40px; }
   .theme-toggle svg { width: 16px; height: 16px; }
-  .lang-btn { padding: 5px 3px; min-width: 24px; font-size: 9px; }
+  .lang-btn { padding: 8px 6px; min-width: 36px; font-size: 11px; }
   .nav-actions { gap: 6px; }
+  .scroll-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
