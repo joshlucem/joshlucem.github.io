@@ -1,4 +1,4 @@
-const CACHE = 'joshlucem-v1';
+const CACHE = 'joshlucem-v2';
 const URLS = [
   '/',
   '/index.html',
