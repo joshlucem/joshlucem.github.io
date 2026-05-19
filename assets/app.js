@@ -183,6 +183,52 @@
     });
   }
 
+  // Efecto de escritura tipo terminal
+  function initTypingEffect() {
+    const typingEl = document.querySelector('.hero-typing');
+    if (!typingEl || reducedMotion) return;
+
+    const text = typingEl.getAttribute('data-text') || './build.sh --portfolio';
+    const speed = 50;
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typingEl.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, speed + Math.random() * 40);
+      } else {
+        typingEl.classList.add('hero-typing-done');
+        typingEl.nextElementSibling.classList.remove('terminal-cursor');
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(type, 600);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(typingEl.closest('.hero-command'));
+  }
+
+  // Boton volver arriba
+  function initScrollTop() {
+    const btn = document.querySelector('.scroll-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+  }
+
   // Inicializa todo cuando el DOM está listo
   function init() {
     initTheme();
@@ -192,6 +238,8 @@
     initSmoothScroll();
     initCopyrightYear();
     initTestimonialSlider();
+    initTypingEffect();
+    initScrollTop();
   }
 
   // Carrusel de testimonios

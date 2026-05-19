@@ -500,6 +500,29 @@ button:focus-visible {
   max-width: 800px;
 }
 
+.hero-command {
+  font-family: var(--font-code);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.hero-command .terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.hero-command .terminal-cursor {
+  margin-left: 2px;
+}
+.hero-typing {
+  color: var(--silver-200);
+  white-space: pre;
+}
+.hero-typing-done {
+  color: var(--accent);
+}
+
 .hero-label {
   display: inline-flex;
   align-items: center;
@@ -1677,6 +1700,28 @@ button:focus-visible {
   content: '> ';
   color: var(--accent);
 }
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--silver-700);
+  border-radius: 4px;
+  color: var(--silver-500);
+  transition: all 0.2s;
+}
+.footer-social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -1763,6 +1808,43 @@ button:focus-visible {
 }
 .legal-content a:hover {
   text-decoration: underline;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   SCROLL TO TOP
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--terminal-bg);
+  border: 1px solid var(--silver-700);
+  border-radius: 4px;
+  color: var(--silver-500);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: all 0.3s var(--ease-out-expo);
+  z-index: 100;
+}
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.scroll-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.scroll-top svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
