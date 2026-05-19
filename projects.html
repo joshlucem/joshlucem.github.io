@@ -8,7 +8,8 @@
     content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self'; font-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0d0f12">
+  <meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
   <meta name="description"
     content="Proyectos de desarrollo: plugins de Minecraft, bots de Discord y herramientas internas.">
 
@@ -89,7 +90,7 @@
         <div class="projects-hero-content">
           <h1 class="reveal">Proyectos</h1>
           <p class="reveal reveal-delay-1">
-            Plugins, bots y herramientas internas. Parte del codigo es publico y parte queda como trabajo privado.
+            Cosas que he hecho. Parte público, parte privado — lo que cada quien me ha pagado por hacer.
           </p>
         </div>
       </div>
@@ -126,13 +127,12 @@
               </div>
               <h3 class="project-title">TimeToFly</h3>
               <p class="project-description">
-                Vuelo temporal para jugadores con control por permisos, tiempo configurable y mensajes ajustables para
-                distintos rangos.
+                Un plugin que da vuelo temporizado por tiempo o permisos. Nada complejo, pero bien configurable.
               </p>
               <ul class="project-features">
-                <li>Tiempo de vuelo por jugador o grupo.</li>
-                <li>Integración con LuckPerms.</li>
-                <li>Mensajes y sonidos personalizables.</li>
+                <li>Control por grupos o jugadores via LuckPerms.</li>
+                <li>Duración configurable y sonidos al activar.</li>
+                <li>Mensajes custom por rango.</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-tag">Java</span>
@@ -177,13 +177,12 @@
               </div>
               <h3 class="project-title">BestSupplies</h3>
               <p class="project-description">
-                Entregas automáticas de ítems con reglas configurables, kits, cooldowns y condiciones por permiso o
-                evento.
+                Kits y entregas automáticas configurables por evento, tiempo o permisos. Open source, por si alguien quiere trastear.
               </p>
               <ul class="project-features">
-                <li>Sistema de kits configurable.</li>
-                <li>Condiciones por tiempo o evento.</li>
-                <li>Código abierto publicado en GitHub.</li>
+                <li>Sistema de kits con condiciones.</li>
+                <li>Eventos programados o triggers.</li>
+                <li>Código abierto en GitHub.</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-tag">Java</span>
@@ -216,13 +215,12 @@
               </div>
               <h3 class="project-title">AirwaveChat</h3>
               <p class="project-description">
-                Chat con canales y formato personalizable. Un experimento funcional para organizar comunicación sin
-                saturar el global.
+                Un experimento que terminó funcionando: canales de chat separados con formato custom. Para no saturar el global con todo.
               </p>
               <ul class="project-features">
                 <li>Canales públicos y privados.</li>
-                <li>Formato con placeholders.</li>
-                <li>Compatible con otros plugins.</li>
+                <li>Placeholders y formato configurable.</li>
+                <li>Compatible con otros plugins de chat.</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-tag">Java</span>
@@ -282,7 +280,7 @@
               </div>
               <h3 class="project-title">Stack privado para comunidad de Discord</h3>
               <p class="project-description">
-                Dos bots privados para gestion interna, actividades, puntos y envios anonimos.
+                Dos bots privados que se encargan de la gestión interna, actividades, puntos y envíos anónimos.
               </p>
 
               <div class="bots-showcase">
@@ -291,12 +289,12 @@
                     <span class="bot-tag">modulo-eventos</span>
                   </div>
                   <p class="bot-description">
-                    Actividades, eventos programados y logica para dinamicas internas.
+                    Dinámicas, eventos y minijuegos internos para mantener activa la comunidad.
                   </p>
                   <ul class="bot-features">
-                    <li>Minijuegos custom.</li>
-                    <li>Eventos programados.</li>
-                    <li>Sistema de puntos.</li>
+                    <li>Minijuegos personalizados.</li>
+                    <li>Eventos con horario.</li>
+                    <li>Sistema de puntos y leaderboard.</li>
                   </ul>
                 </div>
 
@@ -305,12 +303,12 @@
                     <span class="bot-tag">modulo-envios</span>
                   </div>
                   <p class="bot-description">
-                    Recepcion anonima de envios con cola, revision y publicacion asistida.
+                    Recepción anónima de contenido con cola de revisión y publicación automática.
                   </p>
                   <ul class="bot-features">
-                    <li>Recepción anónima.</li>
+                    <li>Recepción anónima con aprobación.</li>
                     <li>Cola para TikTok Lives.</li>
-                    <li>Moderación automática.</li>
+                    <li>Filtros y moderación automática.</li>
                   </ul>
                 </div>
               </div>
@@ -324,9 +322,9 @@
         </div>
 
         <div class="projects-cta reveal">
-          <h3>¿Tienes algo en mente?</h3>
+          <h3>¿Algo parecido?</h3>
           <p>
-            Si necesitas algo parecido, escribeme por Discord y revisamos alcance.
+            Mandame un DM por Discord y vemos si se puede hacer algo.
           </p>
           <a href="contact.html" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

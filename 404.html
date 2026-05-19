@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Josh Lucem</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <meta name="prerender-status-code" content="404">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Josh Lucem</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <div class="nav-links">
+          <a href="projects.html" class="nav-link">proyectos</a>
+          <a href="poetry.html" class="nav-link">poesía</a>
+          <a href="index.html#perfil" class="nav-link">perfil</a>
+          <a href="contact.html" class="nav-link">contacto</a>
+        </div>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <button class="mobile-toggle" type="button" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="projects.html" class="nav-link">proyectos</a>
+    <a href="poetry.html" class="nav-link">poesía</a>
+    <a href="index.html#perfil" class="nav-link">perfil</a>
+    <a href="contact.html" class="nav-link">contacto</a>
+  </div>
+
+  <main class="legal-page">
+    <div class="legal-content" style="text-align:center">
+      <h1 class="reveal">404</h1>
+      <p class="reveal reveal-delay-1" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:2rem">
+        Eso no está por aquí.
+      </p>
+      <div class="terminal" style="max-width:400px;margin:0 auto">
+        <div class="terminal-header">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">error.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-command"> curl -I pagina</span></div>
+          <div class="terminal-line terminal-output">HTTP/2 404 Not Found</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> <span class="terminal-command"> ls ../</span></div>
+          <div class="terminal-line terminal-output"><a href="index.html" style="color:var(--accent)">inicio/</a>  <a href="projects.html" style="color:var(--accent)">proyectos/</a>  <a href="contact.html" style="color:var(--accent)">contacto/</a></div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-brand">Josh Lucem</span>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">inicio</a>
+          <a href="projects.html" class="footer-link">proyectos</a>
+          <a href="poetry.html" class="footer-link">poesía</a>
+          <a href="contact.html" class="footer-link">contacto</a>
+        </div>
+      </div>
+      <p class="footer-copyright">&copy; <span class="current-year">2026</span> Josh Lucem</p>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
