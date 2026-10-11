@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joshlucem.github.io/sitemap.xml
