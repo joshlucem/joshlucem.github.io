@@ -3,6 +3,16 @@
   var doc = document.documentElement;
   var es = doc.lang === 'es';
 
+  // drop the old site's service worker and caches if a browser still has them
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      regs.forEach(function (r) { r.unregister(); });
+    }).catch(function () {});
+  }
+  if (window.caches) {
+    caches.keys().then(function (keys) { keys.forEach(function (k) { caches.delete(k); }); }).catch(function () {});
+  }
+
   function syncToggle() {
     var dark = doc.getAttribute('data-theme') === 'dark';
     document.querySelectorAll('[data-theme-toggle]').forEach(function (b) { b.setAttribute('aria-pressed', dark ? 'true' : 'false'); });
