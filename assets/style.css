@@ -185,6 +185,7 @@ nav.main a[aria-current="page"]::after { content: ""; position: absolute; left: 
 .quote blockquote p { margin: 0; }
 .quote figcaption { display: flex; align-items: center; gap: .75rem; font-size: .88rem; color: var(--muted); line-height: 1.35; }
 .quote figcaption strong { color: var(--text); font-weight: 600; }
+.quote .initial { width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--muted); color: var(--panel); font: 600 1rem/1 var(--sans, inherit); }
 .quote img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 /* greyscale images */
 .vouch img, .quote img { filter: grayscale(1); transition: filter .4s ease; }
